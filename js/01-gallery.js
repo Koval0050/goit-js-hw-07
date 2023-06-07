@@ -20,11 +20,11 @@ imgContainer.insertAdjacentHTML("beforeend", imgGallery.join(""));
 
 function imgModal(e) {
   e.preventDefault();
-  if (e.target.classList.contains("gallery__image")) {
+  if (e.target.nodeName === 'IMG') {
     const imageUrl = e.target.dataset.source;
-    currentLightbox = basicLightbox
-      .create(`<img width="1400" height="900" src="${imageUrl}">`)
-      .show();
+    const instanse = basicLightbox
+      .create(`<img width="1400" height="900" src="${imageUrl}">`);
+      instanse.show();
   }
 }
 
